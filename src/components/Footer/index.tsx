@@ -24,7 +24,7 @@ const FooterWrapper = styled.footer`
   }
 `;
 
-export default function Footer(props) {
+const Footer: React.FC = function (props) {
   return (
     <FooterWrapper {...props}>
       <a href="https://www.alura.com.br/">
@@ -42,3 +42,5 @@ export default function Footer(props) {
     </FooterWrapper>
   );
 }
+
+export default Footer

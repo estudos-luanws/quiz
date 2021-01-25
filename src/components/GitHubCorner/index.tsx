@@ -31,7 +31,11 @@ const SVGWrapper = styled.svg`
   }
 `
 
-export default function GitHubCorner({ projectUrl }) {
+interface Props {
+  projectUrl: string
+}
+
+const GitHubCorner: React.FC<Props> = function ({ projectUrl }) {
   return (
     <Wrapper>
       <a href={projectUrl} target="_blank" rel="noreferrer">
@@ -44,3 +48,5 @@ export default function GitHubCorner({ projectUrl }) {
     </Wrapper>
   )
 }
+
+export default GitHubCorner

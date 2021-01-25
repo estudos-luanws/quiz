@@ -1,8 +1,10 @@
 import styled from 'styled-components'
 import db from '../db.json'
+import Footer from '../src/components/Footer'
+import GitHubCorner from '../src/components/GitHubCorner'
 import { Widget } from '../src/components/Widget'
 
-const BackgroundImage = styled.div`
+const Background = styled.div`
   background-image: url(${db.bg});
   flex: 1;
 `
@@ -20,7 +22,7 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
   return (
-    <BackgroundImage>
+    <Background>
       <QuizContainer>
         <Widget>
           <Widget.Header>
@@ -38,7 +40,9 @@ export default function Home() {
             <p>fasdfasdf asdfasdfas dfsdfsdasfd</p>
           </Widget.Content>
         </Widget>
+        <Footer />
       </QuizContainer>
-    </BackgroundImage>
+      <GitHubCorner projectUrl="https://github.com/estudos-luanws/quiz" />
+    </Background>
   )
 }
