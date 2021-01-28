@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import db from '../db.json'
 import Footer from '../src/components/Footer'
 import GitHubCorner from '../src/components/GitHubCorner'
 import { Widget } from '../src/components/Widget'
@@ -8,11 +7,7 @@ import { SyntheticEvent, useState } from 'react'
 import Input from '../src/components/Form/Input'
 import Form from '../src/components/Form'
 import Button from '../src/components/Form/Button'
-
-const Background = styled.div`
-  background-image: url(${db.bg});
-  flex: 1;
-`
+import QuizBackground from '../src/components/QuizBackground'
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -35,7 +30,7 @@ export default function Home() {
   }
 
   return (
-    <Background>
+    <QuizBackground>
       <QuizContainer>
         <Widget>
           <Widget.Header>
@@ -68,6 +63,6 @@ export default function Home() {
         <Footer />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/estudos-luanws/quiz" />
-    </Background>
+    </QuizBackground>
   )
 }

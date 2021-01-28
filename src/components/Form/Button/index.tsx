@@ -1,6 +1,7 @@
+import { HTMLFactory } from 'react'
 import styled from 'styled-components'
 
-const Button = styled.button`
+const Button: HTMLFactory<HTMLButtonElement> = styled.button`
   background-color: ${({ theme }) => theme.colors.primary};
   color: white;
   border-radius: 5px;
