@@ -44,6 +44,7 @@ const QuestionWidget: React.FC<QuestionWidgetProps> = function (props) {
               >
                 {alternative}
                 <input
+                  style={{ display: 'none' }}
                   id={alternativeId}
                   name={questionId}
                   type="radio"
@@ -52,10 +53,6 @@ const QuestionWidget: React.FC<QuestionWidgetProps> = function (props) {
             )
           })}
         </form>
-
-        <pre>
-          {JSON.stringify(question, null, 4)}
-        </pre>
       </Widget.Content>
     </Widget>
   )
