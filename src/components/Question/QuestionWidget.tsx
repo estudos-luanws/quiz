@@ -8,16 +8,28 @@ interface Props {
   question: Question
   totalQuestions: number
   questionIndex: number
-  onSubmit(event: SyntheticEvent)
+  onSubmit(event: SyntheticEvent): void
+  addResult(result: boolean): void
 }
 
 const QuestionWidget: React.FC<Props> = function (props) {
-  const { question, totalQuestions, questionIndex, onSubmit } = props
+  const { question, totalQuestions, questionIndex, onSubmit, addResult } = props
   const questionId = `question__${questionIndex}`
   const [isQuestionSubmitted, setIsQuestionSubmitted] = useState<boolean>(false)
   const [selectedAlternative, setSelectedAlternative] = useState<number | undefined>(undefined)
   const isCorrect = selectedAlternative === question.answer
   const hasAlternativeSelected = selectedAlternative !== undefined
+
+  function handleOnSubmit(event: SyntheticEvent) {
+    event.preventDefault()
+    setIsQuestionSubmitted(true)
+    setTimeout(() => {
+      addResult(isCorrect)
+      setIsQuestionSubmitted(false)
+      setSelectedAlternative(undefined)
+      onSubmit(event)
+    }, 1000)
+  }
 
   return (
     <Widget>
@@ -42,14 +54,7 @@ const QuestionWidget: React.FC<Props> = function (props) {
           {question.description}
         </p>
 
-        <Form onSubmit={(event) => {
-          event.preventDefault()
-          setIsQuestionSubmitted(true)
-          setTimeout(() => {
-            setIsQuestionSubmitted(false)
-            onSubmit(event)
-          }, 3 * 1000)
-        }}>
+        <Form onSubmit={handleOnSubmit}>
           {question.alternatives.map((alternative, index) => {
             const alternativeId = `alternative__${index}`
             const isCurrentAlternativeSelected = selectedAlternative === index
@@ -66,6 +71,7 @@ const QuestionWidget: React.FC<Props> = function (props) {
                   id={alternativeId}
                   name={questionId}
                   onChange={() => setSelectedAlternative(index)}
+                  checked={isCurrentAlternativeSelected}
                   type="radio"
                 />
               </Widget.Topic>
@@ -74,7 +80,6 @@ const QuestionWidget: React.FC<Props> = function (props) {
           <Button type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </Button>
-          <p>Alternativa selecionada: {selectedAlternative}</p>
           {isQuestionSubmitted && isCorrect && <p>Você acertou!</p>}
           {isQuestionSubmitted && !isCorrect && <p>Você errou!</p>}
         </Form>
