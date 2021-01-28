@@ -29,7 +29,7 @@ const QuestionWidget: React.FC<Props> = function (props) {
       setIsQuestionSubmitted(false)
       setSelectedAlternative(undefined)
       onSubmit(event)
-    }, 1000)
+    }, 2 * 1000)
   }
 
   return (
@@ -58,13 +58,16 @@ const QuestionWidget: React.FC<Props> = function (props) {
         <AlternativesForm onSubmit={handleOnSubmit}>
           {question.alternatives.map((alternative, index) => {
             const alternativeId = `alternative__${index}`
-            const isCurrentAlternativeSelected = selectedAlternative === index
+            const isSelected = selectedAlternative === index
+            const alternativeStatus = isCorrect ? 'SUCCESS' : 'ERROR'
 
             return (
               <Widget.Topic
                 key={index}
                 htmlFor={alternativeId}
-                selected={isCurrentAlternativeSelected}
+                selected={isSelected}
+                data-selected={isSelected}
+                data-status={isQuestionSubmitted && alternativeStatus}
               >
                 {alternative}
                 <input
@@ -72,7 +75,7 @@ const QuestionWidget: React.FC<Props> = function (props) {
                   id={alternativeId}
                   name={questionId}
                   onChange={() => setSelectedAlternative(index)}
-                  checked={isCurrentAlternativeSelected}
+                  checked={isSelected}
                   type="radio"
                 />
               </Widget.Topic>
