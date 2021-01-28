@@ -3,6 +3,7 @@ import Form from "../Form"
 import Button from "../Form/Button"
 import { Widget } from "../Widget"
 import { Question } from "../../models/question"
+import AlternativesForm from "../AlternativesForm"
 
 interface Props {
   question: Question
@@ -54,7 +55,7 @@ const QuestionWidget: React.FC<Props> = function (props) {
           {question.description}
         </p>
 
-        <Form onSubmit={handleOnSubmit}>
+        <AlternativesForm onSubmit={handleOnSubmit}>
           {question.alternatives.map((alternative, index) => {
             const alternativeId = `alternative__${index}`
             const isCurrentAlternativeSelected = selectedAlternative === index
@@ -82,7 +83,7 @@ const QuestionWidget: React.FC<Props> = function (props) {
           </Button>
           {isQuestionSubmitted && isCorrect && <p>Você acertou!</p>}
           {isQuestionSubmitted && !isCorrect && <p>Você errou!</p>}
-        </Form>
+        </AlternativesForm>
       </Widget.Content>
     </Widget>
   )
