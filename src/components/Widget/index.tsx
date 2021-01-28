@@ -70,8 +70,4 @@ Widget.Topic = styled.label`
   &:hover, &:focus {
     opacity: 0.5;
   }
-
-  ${({ theme, selected }) => selected && `
-    background-color: ${theme.colors.secondary};
-  `}
 `
