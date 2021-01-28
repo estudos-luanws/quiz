@@ -1,14 +1,18 @@
+import { SyntheticEvent } from "react"
+import Form from "../../src/components/Form"
+import Button from "../../src/components/Form/Button"
 import { Widget } from "../../src/components/Widget"
 import { Question } from "../../src/models/question"
 
-interface QuestionWidgetProps {
+interface Props {
   question: Question
   totalQuestions: number
   questionIndex: number
+  onSubmit(event: SyntheticEvent)
 }
 
-const QuestionWidget: React.FC<QuestionWidgetProps> = function (props) {
-  const { question, totalQuestions, questionIndex } = props
+const QuestionWidget: React.FC<Props> = function (props) {
+  const { question, totalQuestions, questionIndex, onSubmit } = props
   const questionId = `question__${questionIndex}`
 
   return (
@@ -34,7 +38,7 @@ const QuestionWidget: React.FC<QuestionWidgetProps> = function (props) {
           {question.description}
         </p>
 
-        <form>
+        <Form onSubmit={onSubmit}>
           {question.alternatives.map((alternative, index) => {
             const alternativeId = `alternative__${index}`
 
@@ -52,7 +56,10 @@ const QuestionWidget: React.FC<QuestionWidgetProps> = function (props) {
               </Widget.Topic>
             )
           })}
-        </form>
+          <Button type="submit">
+            Confirmar
+          </Button>
+        </Form>
       </Widget.Content>
     </Widget>
   )

@@ -9,6 +9,7 @@ const Button: HTMLFactory<HTMLButtonElement> = styled.button`
   border: none;
   font-weight: bold;
   text-transform: uppercase;
+  flex: 1;
   
   &:hover {
     background-color: ${({ theme }) => theme.colors.secondary};
