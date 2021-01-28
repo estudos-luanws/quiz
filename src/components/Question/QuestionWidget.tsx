@@ -1,8 +1,8 @@
 import { SyntheticEvent } from "react"
-import Form from "../../src/components/Form"
-import Button from "../../src/components/Form/Button"
-import { Widget } from "../../src/components/Widget"
-import { Question } from "../../src/models/question"
+import Form from "../Form"
+import Button from "../Form/Button"
+import { Widget } from "../Widget"
+import { Question } from "../../models/question"
 
 interface Props {
   question: Question

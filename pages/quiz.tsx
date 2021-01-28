@@ -1,10 +1,10 @@
-import { QuizContainer } from ".."
-import QuizBackground from "../../src/components/QuizBackground"
-import QuizLogo from "../../src/components/QuizLogo"
-import { Widget } from "../../src/components/Widget"
-import db from '../../db.json'
-import { Question } from "../../src/models/question"
-import QuestionWidget from "./QuestionWidget"
+import { QuizContainer } from "."
+import QuizBackground from "../src/components/QuizBackground"
+import QuizLogo from "../src/components/QuizLogo"
+import { Widget } from "../src/components/Widget"
+import db from '../db.json'
+import { Question } from "../src/models/question"
+import QuestionWidget from "../src/components/Question/QuestionWidget"
 import { SyntheticEvent, useEffect, useState } from "react"
 
 type ScreenState = 'LOADING' | 'QUIZ' | 'RESULT'
