@@ -10,9 +10,10 @@ const Button: HTMLFactory<HTMLButtonElement> = styled.button`
   font-weight: bold;
   text-transform: uppercase;
   flex: 1;
+  transition: 0.3s;
   
   &:hover {
-    background-color: ${({ theme }) => theme.colors.secondary};
+    opacity: 0.5;
   }
 `
 

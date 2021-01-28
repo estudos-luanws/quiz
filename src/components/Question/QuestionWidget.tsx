@@ -1,4 +1,4 @@
-import { SyntheticEvent } from "react"
+import { SyntheticEvent, useState } from "react"
 import Form from "../Form"
 import Button from "../Form/Button"
 import { Widget } from "../Widget"
@@ -14,6 +14,10 @@ interface Props {
 const QuestionWidget: React.FC<Props> = function (props) {
   const { question, totalQuestions, questionIndex, onSubmit } = props
   const questionId = `question__${questionIndex}`
+  const [isQuestionSubmitted, setIsQuestionSubmitted] = useState<boolean>(false)
+  const [selectedAlternative, setSelectedAlternative] = useState<number | undefined>(undefined)
+  const isCorrect = selectedAlternative === question.answer
+  const hasAlternativeSelected = selectedAlternative !== undefined
 
   return (
     <Widget>
@@ -38,27 +42,41 @@ const QuestionWidget: React.FC<Props> = function (props) {
           {question.description}
         </p>
 
-        <Form onSubmit={onSubmit}>
+        <Form onSubmit={(event) => {
+          event.preventDefault()
+          setIsQuestionSubmitted(true)
+          setTimeout(() => {
+            setIsQuestionSubmitted(false)
+            onSubmit(event)
+          }, 3 * 1000)
+        }}>
           {question.alternatives.map((alternative, index) => {
             const alternativeId = `alternative__${index}`
+            const isCurrentAlternativeSelected = selectedAlternative === index
 
             return (
               <Widget.Topic
+                key={index}
                 htmlFor={alternativeId}
+                selected={isCurrentAlternativeSelected}
               >
                 {alternative}
                 <input
                   style={{ display: 'none' }}
                   id={alternativeId}
                   name={questionId}
+                  onChange={() => setSelectedAlternative(index)}
                   type="radio"
                 />
               </Widget.Topic>
             )
           })}
-          <Button type="submit">
+          <Button type="submit" disabled={!hasAlternativeSelected}>
             Confirmar
           </Button>
+          <p>Alternativa selecionada: {selectedAlternative}</p>
+          {isQuestionSubmitted && isCorrect && <p>Você acertou!</p>}
+          {isQuestionSubmitted && !isCorrect && <p>Você errou!</p>}
         </Form>
       </Widget.Content>
     </Widget>

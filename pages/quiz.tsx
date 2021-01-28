@@ -35,7 +35,6 @@ export default function QuizPage() {
   }, [])
 
   function handleSubmit(event: SyntheticEvent) {
-    event.preventDefault()
     const nextQuestionIndex = questionIndex + 1
     if (nextQuestionIndex < totalQuestions) setQuestionIndex(nextQuestionIndex)
     else setScreenState('RESULT')

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 interface WidgetType extends HTMLFactory<HTMLDivElement> {
   Header: HTMLFactory<HTMLHeadElement>
   Content: HTMLFactory<HTMLDivElement>
-  Topic: HTMLFactory<HTMLLabelElement>
+  Topic: HTMLFactory<HTMLDivElement>
 }
 
 export const Widget: WidgetType = styled.div`
@@ -70,4 +70,8 @@ Widget.Topic = styled.label`
   &:hover, &:focus {
     opacity: 0.5;
   }
+
+  ${({ theme, selected }) => selected && `
+    background-color: ${theme.colors.secondary};
+  `}
 `
