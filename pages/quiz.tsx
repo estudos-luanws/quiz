@@ -23,11 +23,42 @@ function LoadingWidget() {
   )
 }
 
+interface ResultWidgetProps {
+  results: boolean[]
+}
+
+const ResultWidget: React.FC<ResultWidgetProps> = function ({ results }) {
+  const numberOfCorrectAnswers = results.filter(result => result).length
+  return (
+    <Widget>
+      <Widget.Header>
+        <h1>Resultados</h1>
+      </Widget.Header>
+
+      <Widget.Content>
+        <p>Você acertou {numberOfCorrectAnswers} de {results.length} perguntas</p>
+        <ul>
+          {results.map((result, index) => (
+            <li key={index}>
+              #{index + 1} Resultado: {result ? 'Acertou' : 'Errou'}
+            </li>
+          ))}
+        </ul>
+      </Widget.Content>
+    </Widget>
+  )
+}
+
 export default function QuizPage() {
   const [screenState, setScreenState] = useState<ScreenState>('LOADING')
+  const [results, setResults] = useState<boolean[]>([])
   const [questions, setQuestions] = useState<Question[]>([])
   const [questionIndex, setQuestionIndex] = useState<number>(0)
   const totalQuestions = db.questions.length
+
+  function addResult(result: boolean) {
+    setResults(results => [...results, result])
+  }
 
   useEffect(() => {
     setQuestions(db.questions)
@@ -46,6 +77,7 @@ export default function QuizPage() {
         <QuizLogo />
         {screenState === 'QUIZ' && (
           <QuestionWidget
+            addResult={addResult}
             onSubmit={handleSubmit}
             question={questions[questionIndex]}
             totalQuestions={totalQuestions}
@@ -53,11 +85,7 @@ export default function QuizPage() {
           />
         )}
         {screenState === 'LOADING' && <LoadingWidget />}
-        {screenState === 'RESULT' && (
-          <div>
-            Você acertou X questões, parabéns!
-          </div>
-        )}
+        {screenState === 'RESULT' && <ResultWidget results={results} />}
       </QuizContainer>
     </QuizBackground>
   )
