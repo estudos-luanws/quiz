@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import { createGlobalStyle, ThemeProvider } from 'styled-components'
 import db from '../db.json'
+import { Theme } from '../src/models/theme'
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -10,11 +11,10 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    /* New styles */
     display: flex;
     flex-direction: column;
     font-family: 'Roboto', sans-serif;
-    // Deixa branco no começo
+    color: ${({ theme }: { theme: Theme }) => theme.colors.contrastText};
   }
   html, body {
     min-height: 100vh;
