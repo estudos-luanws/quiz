@@ -31,7 +31,7 @@ export default function Home() {
   }
 
   return (
-    <QuizBackground>
+    <QuizBackground data-background={db.bg}>
       <QuizContainer>
         <Widget>
           <Widget.Header>
@@ -57,7 +57,7 @@ export default function Home() {
           <Widget.Content>
             <ul>
               {db.external.map((url, index) => {
-                const [projectName, authorName] = url
+                const [projectName, githubUser] = url
                   .replace(/https?:\/\//g, '')
                   .replace('.vercel.app', '')
                   .replace('/', '')
@@ -65,8 +65,8 @@ export default function Home() {
 
                 return (
                   <li key={index}>
-                    <Widget.Topic as="a" href={url}>
-                      {`${authorName}/${projectName}`}
+                    <Widget.Topic as="a" href={`/quiz/${projectName}/${githubUser}`}>
+                      {`${githubUser}/${projectName}`}
                     </Widget.Topic>
                   </li>
                 )
