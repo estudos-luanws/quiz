@@ -1,13 +1,12 @@
-import { HTMLFactory } from 'react'
-import styled from 'styled-components'
+import styled, { StyledComponentBase } from 'styled-components'
 
-interface WidgetType extends HTMLFactory<HTMLDivElement> {
-  Header: HTMLFactory<HTMLHeadElement>
-  Content: HTMLFactory<HTMLDivElement>
-  Topic: HTMLFactory<HTMLDivElement>
+interface WidgetType extends StyledComponentBase<"div", any> {
+  Header: StyledComponentBase<"header", any>
+  Content: StyledComponentBase<"div", any>
+  Topic: StyledComponentBase<"label", any, { selected?: boolean }>
 }
 
-export const Widget: WidgetType = styled.div`
+const Widget: any = styled.div`
   margin-top: 24px;
   margin-bottom: 24px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
@@ -71,3 +70,5 @@ Widget.Topic = styled.label`
     opacity: 0.5;
   }
 `
+
+export default Widget as WidgetType

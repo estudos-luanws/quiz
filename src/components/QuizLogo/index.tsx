@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { StyledComponentBase } from 'styled-components'
 import React from 'react'
 import PropTypes from 'prop-types'
 
@@ -32,7 +32,7 @@ Logo.propTypes = {
   className: PropTypes.string.isRequired,
 }
 
-const QuizLogo = styled(Logo)`
+const QuizLogo: StyledComponentBase<"svg", any> = styled(Logo)`
   margin: auto;
   display: block;
   @media screen and (max-width: 500px) {

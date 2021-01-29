@@ -1,6 +1,6 @@
 import QuizBackground from "../../src/components/QuizBackground"
 import QuizLogo from "../../src/components/QuizLogo"
-import { Widget } from "../../src/components/Widget"
+import Widget from "../../src/components/Widget"
 import { Question } from "../../src/models/question"
 import QuestionWidget from "../../src/components/Question/QuestionWidget"
 import { SyntheticEvent, useEffect, useState } from "react"

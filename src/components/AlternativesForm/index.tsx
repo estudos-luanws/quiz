@@ -1,7 +1,7 @@
 import { HTMLFactory } from 'react'
 import styled from 'styled-components'
 
-const AlternativesForm: HTMLFactory<HTMLDivElement> = styled.form`
+const AlternativesForm = styled.form`
   display: flex;
   flex-direction: column;
   flex: 1;

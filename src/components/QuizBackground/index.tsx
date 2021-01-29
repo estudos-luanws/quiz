@@ -1,7 +1,6 @@
-import { HTMLFactory } from 'react'
 import styled from 'styled-components'
 
-const QuizBackground: HTMLFactory<HTMLDivElement> = styled.div`
+const QuizBackground = styled.div`
   width: 100%;
   background-size: cover;
   background-position: center;
@@ -15,7 +14,7 @@ const QuizBackground: HTMLFactory<HTMLDivElement> = styled.div`
     background-position: center;
       background-image:
         linear-gradient(transparent, ${({ theme }) => theme.colors.mainBg}),
-        url(${({ backgroundImage }) => backgroundImage});
+        url(${({ backgroundImage }: any) => backgroundImage});
       display: block;
       width: 100%;
       height: 210px;

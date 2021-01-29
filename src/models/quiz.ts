@@ -1,4 +1,5 @@
 import { Question } from "./question"
+import { Theme } from "./theme";
 
 export interface Quiz {
     bg: string
@@ -6,15 +7,5 @@ export interface Quiz {
     description: string
     questions: Question[]
     external: string[]
-    theme: {
-        colors: {
-            primary: string
-            secondary: string
-            mainBg: string
-            contrastText: string
-            wrong: string
-            success: string
-        }
-        borderRadius: string
-    }
+    theme: Theme
 }

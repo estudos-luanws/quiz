@@ -1,7 +1,7 @@
-import { HTMLFactory, InputHTMLAttributes } from 'react'
+import { InputHTMLAttributes } from 'react'
 import styled from 'styled-components'
 
-const InputBase: HTMLFactory<HTMLInputElement> = styled.input`
+const InputBase = styled.input`
   padding: 16px;
   background-color: transparent;
   border: solid 1px gray;

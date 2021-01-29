@@ -1,9 +1,8 @@
 import { SyntheticEvent, useState } from "react"
-import Form from "../Form"
 import Button from "../Form/Button"
-import { Widget } from "../Widget"
 import { Question } from "../../models/question"
 import AlternativesForm from "../AlternativesForm"
+import Widget from "../Widget"
 
 interface Props {
   question: Question
