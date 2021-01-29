@@ -78,7 +78,7 @@ const QuizScreen: React.FC<Props> = function (props) {
   }
 
   return (
-    <QuizBackground>
+    <QuizBackground data-background={quiz.bg}>
       <QuizContainer>
         <QuizLogo />
         {screenState === 'QUIZ' && (

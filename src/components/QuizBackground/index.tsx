@@ -1,13 +1,11 @@
 import { HTMLFactory } from 'react'
 import styled from 'styled-components'
-import db from '../../../db.json'
-
 
 const QuizBackground: HTMLFactory<HTMLDivElement> = styled.div`
   width: 100%;
   background-size: cover;
   background-position: center;
-  background-image: url(${db.bg});
+  background-image: url(${(props) => props['data-background']});
   flex: 1;
   @media screen and (max-width: 500px) {
     background-image: none;
