@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next/types"
+import { ThemeProvider } from "styled-components"
 import { Quiz } from "../../src/models/quiz"
 import QuizScreen from "../../src/screens/quiz"
 
@@ -10,7 +11,9 @@ const ExternalQuizPage: React.FC<Props> = function (props) {
   const { quiz } = props
 
   return (
-    <QuizScreen quiz={quiz} />
+    <ThemeProvider theme={quiz.theme}>
+      <QuizScreen quiz={quiz} />
+    </ThemeProvider>
   )
 }
 
