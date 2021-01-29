@@ -8,6 +8,7 @@ import Input from '../src/components/Form/Input'
 import Form from '../src/components/Form'
 import Button from '../src/components/Form/Button'
 import QuizBackground from '../src/components/QuizBackground'
+import db from '../db.json'
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -53,11 +54,24 @@ export default function Home() {
           </Widget.Content>
         </Widget>
         <Widget>
-          <Widget.Header>
-            <h1>Quiz</h1>
-          </Widget.Header>
           <Widget.Content>
-            <p>fasdfasdf asdfasdfas dfsdfsdasfd</p>
+            <ul>
+              {db.external.map((url, index) => {
+                const [projectName, authorName] = url
+                  .replace(/https?:\/\//g, '')
+                  .replace('.vercel.app', '')
+                  .replace('/', '')
+                  .split('.')
+
+                return (
+                  <li key={index}>
+                    <Widget.Topic as="a" href={url}>
+                      {`${authorName}/${projectName}`}
+                    </Widget.Topic>
+                  </li>
+                )
+              })}
+            </ul>
           </Widget.Content>
         </Widget>
         <Footer />
