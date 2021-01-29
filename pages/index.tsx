@@ -9,6 +9,7 @@ import Form from '../src/components/Form'
 import Button from '../src/components/Form/Button'
 import QuizBackground from '../src/components/QuizBackground'
 import db from '../db.json'
+import Link from '../src/components/Link'
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -65,9 +66,11 @@ export default function Home() {
 
                 return (
                   <li key={index}>
-                    <Widget.Topic as="a" href={`/quiz/${projectName}/${githubUser}`}>
-                      {`${githubUser}/${projectName}`}
-                    </Widget.Topic>
+                    <Link href={`/quiz/${projectName}/${githubUser}`}>
+                      <Widget.Topic>
+                        {`${githubUser}/${projectName}`}
+                      </Widget.Topic>
+                    </Link>
                   </li>
                 )
               })}

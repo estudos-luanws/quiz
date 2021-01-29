@@ -3,6 +3,7 @@ import Button from "../Form/Button"
 import { Question } from "../../models/question"
 import AlternativesForm from "../AlternativesForm"
 import Widget from "../Widget"
+import BackLinkArrow from "../BackLinkArrow"
 
 interface Props {
   question: Question
@@ -34,6 +35,7 @@ const QuestionWidget: React.FC<Props> = function (props) {
   return (
     <Widget>
       <Widget.Header>
+        <BackLinkArrow href="/" />
         <h3>Pergunta {questionIndex + 1} de {totalQuestions}</h3>
       </Widget.Header>
       <img
