@@ -10,6 +10,7 @@ import Button from '../src/components/Form/Button'
 import QuizBackground from '../src/components/QuizBackground'
 import db from '../db.json'
 import Link from '../src/components/Link'
+import { motion } from 'framer-motion'
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -34,7 +35,16 @@ export default function Home() {
   return (
     <QuizBackground data-background={db.bg}>
       <QuizContainer>
-        <Widget>
+        <Widget
+          as={motion.section}
+          variants={{
+            show: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: '100%' }
+          }}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
           <Widget.Header>
             <h1>The legend of zelda</h1>
           </Widget.Header>
@@ -54,7 +64,16 @@ export default function Home() {
             </Form>
           </Widget.Content>
         </Widget>
-        <Widget>
+        <Widget
+          as={motion.section}
+          variants={{
+            show: { opacity: 1, y: 0 },
+            hidden: { opacity: 0, y: '100%' }
+          }}
+          initial="hidden"
+          animate="show"
+          transition={{ delay: 0.5, duration: 0.5 }}
+        >
           <Widget.Content>
             <ul>
               {db.external.map((url, index) => {
