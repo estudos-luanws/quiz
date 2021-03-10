@@ -4,25 +4,26 @@
     "description": "Teste os seus conhecimentos sobre Python",
     "questions": [
         {
-            "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-            "title": "Como fazer um seletor por id via CSS?",
+            "image": "https://miro.medium.com/max/1800/1*jB76MLZjiNhGSQQvxm7LSQ.gif",
+            "title": "Qual é a sintaxe correta para gerar \"Hello World\" em Python?",
             "description": "Essa é pra aquecer",
             "answer": 2,
             "alternatives": [
-                ".elemento",
-                "*elemento",
-                "#elemento",
-                "%elemento"
+                "p('Hello World')",
+                "echo \"Hello World\"",
+                "print(\"Hello World\")",
+                "echo(\"Hello World\")"
             ]
         },
         {
-            "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-            "title": "Como fazer um background gradiente com css?",
-            "description": "Faz tempo em haha",
-            "answer": 0,
+            "image": "https://media0.giphy.com/media/13HgwGsXF0aiGY/giphy.gif",
+            "title": "Como você insere comentários no código Python?",
+            "description": null,
+            "answer": 1,
             "alternatives": [
-                "background: linear-gradient(#e66465, #9198e5);",
-                "background: gradient(#e66465, #9198e5);"
+                "//This is a comment",
+                "#This is a comment",
+                "/*This is a comment*/"
             ]
         }
     ],
