@@ -8,9 +8,9 @@ import Input from '../src/components/Form/Input'
 import Form from '../src/components/Form'
 import Button from '../src/components/Form/Button'
 import QuizBackground from '../src/components/QuizBackground'
-import db from '../db.json'
 import Link from '../src/components/Link'
 import { motion } from 'framer-motion'
+import db from '../db.json'
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -46,13 +46,11 @@ export default function Home() {
           transition={{ delay: 0.5, duration: 0.5 }}
         >
           <Widget.Header>
-            <h1>The legend of zelda</h1>
+            <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
             <Form onSubmit={onSubmit}>
-              <p>
-                Teste seus conhecimentos sobre Zelda e divirta-se criando o seu AluraQuiz!
-              </p>
+              <p>{db.description}</p>
               <Input
                 placeholder="Digite seu nome..."
                 type="text"
