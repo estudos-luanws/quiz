@@ -38,7 +38,7 @@ const QuestionWidget: React.FC<Props> = function (props) {
         <BackLinkArrow href="/" />
         <h3>Pergunta {questionIndex + 1} de {totalQuestions}</h3>
       </Widget.Header>
-      <img
+      {question.image && <img
         src={question.image}
         alt="Descrição"
         style={{
@@ -46,7 +46,7 @@ const QuestionWidget: React.FC<Props> = function (props) {
           height: '150px',
           objectFit: 'cover'
         }}
-      />
+      />}
 
       <Widget.Content>
         <h1>
