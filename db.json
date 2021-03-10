@@ -25,6 +25,18 @@
                 "#This is a comment",
                 "/*This is a comment*/"
             ]
+        },
+        {
+            "image": "https://www.python-course.eu/images/variable_memory.gif",
+            "title": "Qual destes NÃO é um nome de variável legal?",
+            "description": null,
+            "answer": 3,
+            "alternatives": [
+                "_myvar",
+                "Myvar",
+                "my_var",
+                "my-var"
+            ]
         }
     ],
     "external": [
