@@ -41,7 +41,7 @@
 # 🔖 Sobre
 [![image](public/screenshot.png)](https://quiz-imersao-react-alura.vercel.app/)
 <p style='text-align: justify;'>
-    Este quiz foi desenvolvido durante a imersão React Alura com Next.js
+    Este quiz foi desenvolvido durante a imersão React da Alura.
 </p>
 
 # 🚀 Tecnologias utilizadas
