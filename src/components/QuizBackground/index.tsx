@@ -4,17 +4,22 @@ const QuizBackground = styled.div`
   width: 100%;
   background-size: cover;
   background-position: center;
+  background-color: ${({ theme }) => theme.colors.mainBg};
   background-image: url(${(props) => props['data-background']});
+  background-attachment: scroll;
   flex: 1;
   @media screen and (max-width: 500px) {
     background-image: none;
     &:after {
       content: "";
       background-size: cover;
-    background-position: center;
+      background-position: center;
       background-image:
-        linear-gradient(transparent, ${({ theme }) => theme.colors.mainBg}),
-        url(${({ backgroundImage }: any) => backgroundImage});
+        linear-gradient(
+          transparent, 
+          ${({ theme }) => theme.colors.mainBg}), 
+          url(${(props) => props['data-background']}
+        );
       display: block;
       width: 100%;
       height: 210px;
