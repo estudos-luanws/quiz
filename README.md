@@ -41,7 +41,10 @@
 # 🔖 Sobre
 [![image](public/screenshot.png)](https://quiz-imersao-react-alura.vercel.app/)
 <p style='text-align: justify;'>
-    Este quiz foi desenvolvido durante a imersão React da Alura.
+Este quiz foi desenvolvido durante a imersão React da Alura.
+</p>
+<p style='text-align: justify;'>
+Trata-se de um jogo de perguntas e respostas sobre Python integrado com projetos de outros usuários possibilitando a existência de outros quizes no projeto.
 </p>
 
 # 🚀 Tecnologias utilizadas
