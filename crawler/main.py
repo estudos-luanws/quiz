@@ -1,3 +1,5 @@
+# BASE URL: https://alura-quiz-delta.vercel.app/
+
 import json
 import os
 import sys
@@ -22,11 +24,14 @@ def get_db(url: str):
     return response.json()
 
 
-def crawler_url(start_url: str, depth: int) -> List[str]:
+crawler: Set[str] = set()
+
+
+def crawler_url(start_url: str, depth: int) -> Set[str]:
     if depth <= 0:
         return []
     depth -= 1
-    crawler: Set[str] = set()
+    global crawler
     with suppress(Exception):
         urls = get_db(start_url)['external']
         for url in urls:
@@ -34,15 +39,17 @@ def crawler_url(start_url: str, depth: int) -> List[str]:
                 for new_url in crawler_url(url, depth):
                     crawler.add(new_url)
             crawler.add(url)
-
-    with suppress(KeyError):
-        crawler.remove('')
     crawler.add(start_url)
-    return list(crawler)
+    return crawler
 
 
 url, depth = sys.argv[1:]
-urls = crawler_url(url, int(depth))
+crawler_url(url, int(depth))
+with suppress(KeyError):
+    crawler.remove('')
+urls = list(crawler)
+
+
 with open('urls.txt', 'w') as f:
     f.write('\n'.join(urls))
 with open('external.json', 'w') as f:
