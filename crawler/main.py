@@ -50,8 +50,8 @@ with suppress(KeyError):
 urls = list(crawler)
 
 
-with open('urls.txt', 'w') as f:
+with open('data/urls.txt', 'w') as f:
     f.write('\n'.join(urls))
-with open('external.json', 'w') as f:
+with open('data/external.json', 'w') as f:
     f.write(json.dumps(urls, indent=2))
 print(len(urls), 'URLs encontradas')
