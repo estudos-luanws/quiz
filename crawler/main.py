@@ -4,7 +4,7 @@ import json
 import os
 import sys
 from contextlib import suppress
-from typing import List, Set
+from typing import Set
 
 import requests
 
