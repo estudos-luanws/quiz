@@ -9,8 +9,6 @@ const QuizBackground = styled.div`
   background-position: center;
   background-color: ${({ theme }) => theme.colors.mainBg};
   background-image: url(${(props) => props['data-background']});
-  background-attachment: scroll;
-  flex: 1;
   @media screen and (max-width: 500px) {
     background-image: none;
     &:after {
