@@ -33,7 +33,8 @@ export default function Home() {
   }
 
   return (
-    <QuizBackground data-background={db.bg}>
+    <>
+      <QuizBackground data-background={db.bg} />
       <QuizContainer>
         <Widget
           as={motion.section}
@@ -97,6 +98,6 @@ export default function Home() {
         <Footer />
       </QuizContainer>
       <GitHubCorner projectUrl="https://github.com/estudos-luanws/quiz" />
-    </QuizBackground>
+    </>
   )
 }

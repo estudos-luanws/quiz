@@ -78,7 +78,8 @@ const QuizScreen: React.FC<Props> = function (props) {
   }
 
   return (
-    <QuizBackground data-background={quiz.bg}>
+    <>
+      <QuizBackground data-background={quiz.bg} />
       <QuizContainer>
         <QuizLogo />
         {screenState === 'QUIZ' && (
@@ -93,7 +94,7 @@ const QuizScreen: React.FC<Props> = function (props) {
         {screenState === 'LOADING' && <LoadingWidget />}
         {screenState === 'RESULT' && <ResultWidget results={results} />}
       </QuizContainer>
-    </QuizBackground>
+    </>
   )
 }
 
