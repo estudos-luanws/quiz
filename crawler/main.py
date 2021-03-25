@@ -24,6 +24,13 @@ def get_db(url: str):
     return response.json()
 
 
+def check_valid_url(url: str) -> str:
+    with suppress(Exception):
+        get_db(url)
+        return True
+    return False
+
+
 crawler: Set[str] = set()
 
 
@@ -47,8 +54,7 @@ url, depth = sys.argv[1:]
 crawler_url(url, int(depth))
 with suppress(KeyError):
     crawler.remove('')
-urls = list(crawler)
-
+urls = [url for url in crawler if check_valid_url(url)]
 
 with open('data/urls.txt', 'w') as f:
     f.write('\n'.join(urls))
