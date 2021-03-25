@@ -37,12 +37,43 @@
                 "my_var",
                 "my-var"
             ]
+        },
+        {
+            "image": "https://media0.giphy.com/media/rbRlURYMrUNfG/source.gif",
+            "title": "Qual a extensão correta:",
+            "description": "Para Arquivos Python?",
+            "answer": 2,
+            "alternatives": [
+                ".pyth",
+                ".pt",
+                ".py"
+            ]
+        },
+        {
+            "image": "https://media0.giphy.com/media/rbRlURYMrUNfG/source.gif",
+            "title": "Qual a maneira correta:",
+            "description": "Cria função em Python?",
+            "answer": 1,
+            "alternatives": [
+                "function mufunction():",
+                "def myFunction():",
+                "create myFunction():"
+            ]
+        },
+        {
+            "image": "https://media0.giphy.com/media/rbRlURYMrUNfG/source.gif",
+            "title": "Qual o operador:",
+            "description": "Usado para multiplicar em Python?",
+            "answer": 3,
+            "alternatives": [
+                "%",
+                "+",
+                "#",
+                "*"
+            ]
         }
     ],
     "external": [
-        "https://aluraquiz-css.omariosouto.vercel.app/",
-        "https://aluraquiz-devsoutinho.omariosouto.vercel.app/",
-        "https://aluraquiz-nu-nine.vercel.app",
         "https://gintama-quiz.yuukiasuna00.vercel.app",
         "https://scrumquiz.robsonamendonca.vercel.app",
         "https://gamequiz.brunoamaia.vercel.app/",
@@ -86,9 +117,7 @@
         "https://minequiz.lukeflame.vercel.app",
         "https://imersao-react-nextjs-git-main.matheusbronca.vercel.app/",
         "https://imersao-react-next-js.nathanaquino.vercel.app/",
-        "https://master-quiz-lime.vercel.app",
         "https://doctor-who-quiz.emanuelpna.vercel.app",
-        "https://starwarsquiz.isaacpontes.vercel.app",
         "https://selecaoquiz.thomastargino.vercel.app",
         "https://lotr-quiz.filipe1309.vercel.app/",
         "https://alura-quiz.ricmaloy.vercel.app",
@@ -105,7 +134,6 @@
         "https://naruto-quiz.llofyy.vercel.app/",
         "https://biblequiz.epsilveira.vercel.app/",
         "https://aluraquiz-base.augustorl.vercel.app/",
-        "https://alura-quiz-basquete.vercel.app",
         "https://quiz-contemplese.ricardoltt.vercel.app",
         "https://aluraquiz-harrypotter.karinarovani.vercel.app",
         "https://quiz.rafalmeida73.vercel.app/",
@@ -135,8 +163,6 @@
         "https://javaporemscript.vercel.app",
         "https://friendsquiz.samaslima.vercel.app",
         "https://python-quiz.ermessonlima.vercel.app",
-        "https://quiz-cavaleiro-zodiaco.vercel.app",
-        "https://imersao-react-next.dayana-sog.vercel.app",
         "https://aluraquiz-base-git-main.alura-challenges.vercel.app/",
         "https://projeto-alura-quiz.andersonfroes.vercel.app",
         "https://flash-quiz-next.davidlpc1.vercel.app",
@@ -168,16 +194,13 @@
         "https://aluraquiz-base.alura-challenges.vercel.app/",
         "https://alura-quiz-ff.willsantos.vercel.app",
         "https://democra-quiz.lfrigodesouza.vercel.app",
-        "https://quiz.abilioazevedo.com.br",
         "https://aluraquiz-base.gii-pan.vercel.app/",
         "https://next-quiz.jeffersondenilson.vercel.app",
         "https://disgust-quiz.arrivabeni.vercel.app",
         "https://quiz.rafalmeida73.vercel.app",
         "https://bloodsugarquiz.guilhermesanchess.vercel.app",
         "https://css-quiz.higorpo.vercel.app",
-        "https://historyquiz.vercel.app/",
         "https://alura-imersao-react-next.rafaelyano.vercel.app/",
-        "https://aluraquiz-joaomeidson.vercel.app",
         "https://alura-quiz.luizf-lf.vercel.app",
         "https://sotc-quiz.lucianowribeiro.vercel.app",
         "https://demon-slayer-quiz.hugos94.vercel.app",
@@ -202,7 +225,6 @@
         "https://lolzinquiz-git-main.bernardooficial.vercel.app/",
         "https://nerdquiz.luctopan.vercel.app",
         "https://alura-quiz-avengers.fernanda-kipper.vercel.app/",
-        "https://rp7quiz.vercel.app",
         "https://wanda-vision-aluraquiz.marilira.vercel.app",
         "https://nextjsquiz.rafaelfachinelli.vercel.app",
         "https://quiz-noticia-verdadeira.biacoelho.vercel.app/",
@@ -212,7 +234,6 @@
         "https://covid-quiz.pedrofelipemm.vercel.app",
         "https://alura-imersao.lucasbkatayama.vercel.app",
         "https://aluraquiz-marvel.omariosouto.vercel.app/",
-        "https://tecno-quiz-684tkxmp3.vercel.app",
         "https://sneaker-quiz.viiniciusgs.vercel.app",
         "https://quiz.dgsdev.vercel.app/",
         "https://breaking-bad-quiz.eliasnepo.vercel.app/",
@@ -230,8 +251,6 @@
         "https://aluraquiz-rpg.danielmalka.vercel.app",
         "https://pinkfloyd-quiz.denismend.vercel.app",
         "https://disgust-quiz.arrivabeni.vercel.app/",
-        "https://aluraquiz-nextjs-one.vercel.app",
-        "https://alura-quiz-imersao-2.vercel.app",
         "https://quiz-react.brenoha.vercel.app/",
         "https://quiz-one-piece.henpassquesori.vercel.app/",
         "https://imersao-react-nextjs.fallying.vercel.app",
@@ -239,7 +258,6 @@
         "https://divequiz.fncarneiro.vercel.app/",
         "https://quiz-valorant.johnatanivini.vercel.app",
         "https://bladequiz.guilhermesantoss.vercel.app/",
-        "https://alura-quiz-delta.vercel.app/",
         "https://kimetsuquiz-base.lilitbandeira.vercel.app",
         "https://aluraquiz-marcos.wardedcoffee.vercel.app",
         "https://aluraquiz.rpaivabr.vercel.app",
